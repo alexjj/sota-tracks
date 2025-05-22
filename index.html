@@ -126,7 +126,7 @@
     const searchBox = document.getElementById("searchBox");
     searchBox.addEventListener("keydown", function (e) {
       if (e.key === "Enter") {
-        const summitCode = searchBox.value.trim();
+        const summitCode = searchBox.value.trim().toUpperCase();
         if (summitCode) {
           loadSummit(summitCode);
         }
