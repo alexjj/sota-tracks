@@ -9,7 +9,7 @@ output_dir = "data"
 os.makedirs(output_dir, exist_ok=True)
 
 # Load summit codes
-df = pd.read_csv("uksummits.csv")
+df = pd.read_csv("othersummits.csv")
 summit_codes = df['SummitCode'].dropna().unique()
 
 # API template
@@ -38,7 +38,7 @@ for code in summit_codes:
             json.dump(data, f, ensure_ascii=False, indent=2)
 
         print(f"Saved: {code}")
-        time.sleep(0.5)  # Be nice to the server
+        time.sleep(0.2)  # Be nice to the server
 
     except Exception as e:
         print(f"Failed to get {code}: {e}")
